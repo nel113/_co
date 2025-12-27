@@ -12,7 +12,7 @@
 
 *The goal is to build a predictable, state-based machine from chaotic electrons.*
 
-### [**1. Elementary Logic (The Atomic Foundation)**](https://github.com/nel113/_co/tree/0f2c58f10606407390f20972b98ec8d5a00c8e12/homework/1)
+### [**1. Elementary Logic (The Atomic Foundation)**](https://github.com/nel113/_co/tree/88e4257566be6497418a780b48bc0520bbe6bf46/homework/1)
 
 We begin with the axiom that `Nand(a, b)` produces `0` only if both `a` and `b` are `1`. From this, we derive the standard boolean set.
 
@@ -22,7 +22,7 @@ We begin with the axiom that `Nand(a, b)` produces `0` only if both `a` and `b` 
 
 * **Demultiplexers (DMux):** The reverse of Mux; sends a single input to one of two destinations.
 
-### **2. Combinational Arithmetic (The ALU)**
+### [**2. Combinational Arithmetic (The ALU)**](https://github.com/nel113/_co/tree/88e4257566be6497418a780b48bc0520bbe6bf46/homework/2)
 
 The Arithmetic Logic Unit (ALU) is the computational brain. It is stateless—inputs flow through immediately to outputs.
 
@@ -37,7 +37,7 @@ The Arithmetic Logic Unit (ALU) is the computational brain. It is stateless—in
 
 * **Status Flags:** The ALU also outputs two 1-bit flags: `zr` (if output == 0) and `ng` (if output < 0), used later for conditional jumping.
 
-### **3. Sequential Logic (Memory)**
+### [**3. Sequential Logic (Memory)**](https://github.com/nel113/_co/tree/88e4257566be6497418a780b48bc0520bbe6bf46/homework/3)
 
 To create "Time," we introduce the Clock.
 
@@ -45,7 +45,7 @@ To create "Time," we introduce the Clock.
 * **Registers:** A Register is simply a DFF with a "Load" bit. If `load=1`, the DFF takes a new value; if `load=0`, it recycles its old output back into its input (remembering the state).
 * **RAM:** An array of registers. We use `DMux` logic to route the "load" signal to the correct register address and `Mux` logic to route the correct register's output back to the bus.
 
-### **4. The Hack CPU & Architecture**
+### [**4. The Hack CPU & Architecture**](https://github.com/nel113/_co/tree/88e4257566be6497418a780b48bc0520bbe6bf46/homework/4)
 
 The CPU integrates the ALU, Registers, and Program Counter.
 
@@ -61,7 +61,7 @@ The CPU integrates the ALU, Registers, and Program Counter.
 
 
 
-### **5. Instruction Set Architecture (ISA)**
+### [**5. Instruction Set Architecture (ISA)**](https://github.com/nel113/_co/tree/88e4257566be6497418a780b48bc0520bbe6bf46/homework/5)
 
 The interface between hardware and software. Hack has two instructions:
 
@@ -87,7 +87,7 @@ The interface between hardware and software. Hack has two instructions:
 
 *Bridging the gap between specific hardware constraints and abstract software needs.*
 
-### **6. The Assembler**
+### [**6. The Assembler**](https://github.com/nel113/_co/tree/88e4257566be6497418a780b48bc0520bbe6bf46/homework/6)
 
 Converts symbolic text (`@loop`, `D=D+1`) into binary strings.
 
@@ -102,7 +102,7 @@ Converts symbolic text (`@loop`, `D=D+1`) into binary strings.
 
 
 
-### **7. The Virtual Machine (Stack Arithmetic)**
+### [**7. The Virtual Machine (Stack Arithmetic)**](https://github.com/nel113/_co/tree/88e4257566be6497418a780b48bc0520bbe6bf46/homework/7)
 
 The VM abstracts the CPU. Instead of registers, we use a **Stack**.
 
@@ -124,7 +124,7 @@ M=M+1 // SP++
 
 * **Memory Segments:** The VM maps virtual segments (`local`, `argument`, `this`, `that`) to physical RAM addresses using pointers stored in `R1`–`R4`.
 
-### **8. VM Control Flow (Function Calls)**
+### [**8. VM Control Flow (Function Calls)**](https://github.com/nel113/_co/tree/88e4257566be6497418a780b48bc0520bbe6bf46/homework/8)
 
 This enables recursion and modularity.
 
@@ -143,11 +143,11 @@ This enables recursion and modularity.
 
 *The user-facing application layer.*
 
-### **9. Jack Language**
+### [**9. Jack Language**](https://github.com/nel113/_co/tree/88e4257566be6497418a780b48bc0520bbe6bf46/homework/9)
 
 A Java-like, object-oriented language. It supports classes, methods, constructors, arrays, and static variables, but uses a simplified syntax to make compilation manageable.
 
-### **10. Syntax Analysis (The Front-End)**
+### [**10. Syntax Analysis (The Front-End)**](https://github.com/nel113/_co/tree/88e4257566be6497418a780b48bc0520bbe6bf46/homework/10)
 
 * **Tokenizer:** Breaks `while (x < 0)` into `<keyword>while`, `<symbol>(`, `<identifier>x`...
 * **Parser:** Creates an XML structure based on the Jack Grammar.
@@ -155,7 +155,7 @@ A Java-like, object-oriented language. It supports classes, methods, constructor
 
 
 
-### **11. Code Generation (The Back-End)**
+### [**11. Code Generation (The Back-End)**](https://github.com/nel113/_co/tree/88e4257566be6497418a780b48bc0520bbe6bf46/homework/11)
 
 Traverses the parse tree and emits VM code.
 
@@ -166,7 +166,7 @@ Traverses the parse tree and emits VM code.
 
 
 
-### **12. The Operating System**
+### [**12. The Operating System**](https://github.com/nel113/_co/tree/88e4257566be6497418a780b48bc0520bbe6bf46/homework/12)
 
 A library of 8 classes written in Jack, compiled, and linked with user programs.
 
